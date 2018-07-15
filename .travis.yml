@@ -1,10 +1,10 @@
 language: python
 python:
-  - "2.7"
+  - "3.6"
 sudo: required
 services:
   - docker
 install:
-  - pip2 install ansible-test boto
+  - pip3 install ansible-test boto
 script:
   - ansible-test sanity
