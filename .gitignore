@@ -1,0 +1,4 @@
+# for ansible-test
+.ansible-test
+Dockerfile
+
