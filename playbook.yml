@@ -5,7 +5,7 @@
     key_name: my_keypair
     instance_type: m1.small
     security_group: my_securitygroup
-    image: ami-ceafcba8 # Amazon Linux AMI 2017.09.1 in Tokyo Region
+    image: ami-06cd52961ce9f0d85 # Amazon Linux AMI 2018.03 in Tokyo Region
     region: ap-northeast-1
   tasks:
     - name: create a new ec2 key pair
