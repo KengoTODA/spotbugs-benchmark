@@ -2,3 +2,8 @@
 .ansible-test
 Dockerfile
 
+# for virtualenv
+.python3
+
+aws-private.pem
+playbook.retry
