@@ -1,4 +1,6 @@
 
+[![Build Status](https://travis-ci.com/KengoTODA/spotbugs-benchmark.svg?branch=master)](https://travis-ci.com/KengoTODA/spotbugs-benchmark)
+
 ## How to run benchmark
 
 ```sh
