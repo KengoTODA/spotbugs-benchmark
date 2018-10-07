@@ -1,4 +1,6 @@
 
+[![Build Status](https://travis-ci.com/KengoTODA/spotbugs-benchmark.svg?branch=master)](https://travis-ci.com/KengoTODA/spotbugs-benchmark)
+
 ## How to run benchmark
 
 ```sh
@@ -12,7 +14,7 @@ $ ansible-playbook playbook.yml -i hosts.yml
 
 ## License
 
-Copyright [yyyy] [name of copyright owner]
+Copyright 2018 Kengo TODA
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
