@@ -3,4 +3,4 @@ dist: trusty
 language: python
 python:
   - "3.6"
-script: true
+script: ansible-lint playbook.yml
