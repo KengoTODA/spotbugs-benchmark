@@ -3,7 +3,7 @@ ansible-test==1.0.1
 asn1crypto==0.24.0
 bcrypt==3.1.6
 boto==2.49.0
-boto3==1.9.30
+boto3==1.9.177
 botocore==1.12.30
 cffi==1.12.2
 cryptography==2.3.1
