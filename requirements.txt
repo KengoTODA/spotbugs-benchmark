@@ -1,6 +1,6 @@
 ansible==2.8.5
 ansible-test==1.0.1
-asn1crypto==0.24.0
+asn1crypto==1.0.0
 bcrypt==3.1.6
 boto==2.49.0
 boto3==1.9.242
