@@ -1,4 +1,4 @@
-ansible==2.9.1
+ansible==2.9.2
 ansible-test==1.0.1
 asn1crypto==1.2.0
 bcrypt==3.1.7
