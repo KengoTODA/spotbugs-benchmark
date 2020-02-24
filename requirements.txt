@@ -8,7 +8,7 @@ botocore==1.15.1
 cffi==1.14.0
 cryptography==2.8
 docutils==0.16
-enum34==1.1.6
+enum34==1.1.9
 idna==2.9
 ipaddress==1.0.23
 Jinja2==2.11.1
