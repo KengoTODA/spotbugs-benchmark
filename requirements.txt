@@ -12,7 +12,7 @@ enum34==1.1.9
 idna==2.9
 ipaddress==1.0.23
 Jinja2==2.11.1
-jmespath==0.9.4
+jmespath==0.9.5
 MarkupSafe==1.1.1
 paramiko==2.7.1
 pyasn1==0.4.8
