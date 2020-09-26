@@ -5,7 +5,7 @@ bcrypt==3.2.0
 boto==2.49.0
 boto3==1.15.6
 botocore==1.18.6
-cffi==1.14.2
+cffi==1.14.3
 cryptography==3.1
 docutils==0.16
 enum34==1.1.10
