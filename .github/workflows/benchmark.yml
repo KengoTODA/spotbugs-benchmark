@@ -40,10 +40,10 @@ jobs:
             --export-markdown - \
             --min-runs 5 \
             --command-name 'SpotBugs 4.1.4' \
-            --command-name 'SpotBugs 4.0.6' \
-            --command-name 'SpotBugs 3.1.12' \
-            --command-name 'FindBugs 3.0.1' \
             'java -Xmx2g -Xms2g -jar /tmp/spotbugs-4.1.4/lib/spotbugs.jar  -textui -auxclasspath /tmp/apache-cassandra-${{ env.CASSANDRA_VER }}/lib/ -output /dev/null /tmp/apache-cassandra-${{ env.CASSANDRA_VER }}/lib/apache-cassandra-${{ env.CASSANDRA_VER }}.jar' \
+            --command-name 'SpotBugs 4.0.6' \
             'java -Xmx2g -Xms2g -jar /tmp/spotbugs-4.0.6/lib/spotbugs.jar  -textui -auxclasspath /tmp/apache-cassandra-${{ env.CASSANDRA_VER }}/lib/ -output /dev/null /tmp/apache-cassandra-${{ env.CASSANDRA_VER }}/lib/apache-cassandra-${{ env.CASSANDRA_VER }}.jar' \
+            --command-name 'SpotBugs 3.1.12' \
             'java -Xmx2g -Xms2g -jar /tmp/spotbugs-3.1.12/lib/spotbugs.jar -textui -auxclasspath /tmp/apache-cassandra-${{ env.CASSANDRA_VER }}/lib/ -output /dev/null /tmp/apache-cassandra-${{ env.CASSANDRA_VER }}/lib/apache-cassandra-${{ env.CASSANDRA_VER }}.jar' \
+            --command-name 'FindBugs 3.0.1' \
             'java -Xmx2g -Xms2g -jar /tmp/findbugs-3.0.1/lib/findbugs.jar  -textui -auxclasspath /tmp/apache-cassandra-${{ env.CASSANDRA_VER }}/lib/ -output /dev/null /tmp/apache-cassandra-${{ env.CASSANDRA_VER }}/lib/apache-cassandra-${{ env.CASSANDRA_VER }}.jar'
