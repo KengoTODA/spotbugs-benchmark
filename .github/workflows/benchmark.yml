@@ -36,7 +36,7 @@ jobs:
           wget -q https://nchc.dl.sourceforge.net/project/findbugs/findbugs/3.0.1/findbugs-3.0.1.tar.gz -O - | tar zxf -
       - name: Run microbenchmark
         run: |
-          hyperfine
+          hyperfine \
             --export-markdown - \
             --min-runs 5 \
             --command-name 'SpotBugs 4.1.4' \
