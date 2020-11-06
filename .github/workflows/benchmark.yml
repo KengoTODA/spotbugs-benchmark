@@ -35,7 +35,7 @@ jobs:
           wget https://nchc.dl.sourceforge.net/project/findbugs/findbugs/3.0.1/findbugs-3.0.1.tar.gz -O - | tar zxf -
       - name: Run microbenchmark
         run: |
-          hyperfine --export-markdown --min-runs 5 \
+          hyperfine --export-markdown - --min-runs 5 \
             'java -Xmx2g -Xms2g -jar /tmp/spotbugs-4.1.4/lib/spotbugs.jar  -textui -auxclasspath /tmp/apache-cassandra-${{ env.CASSANDRA_VER }}/lib/ -output /dev/null /tmp/apache-cassandra-${{ env.CASSANDRA_VER }}/lib/apache-cassandra-${{ env.CASSANDRA_VER }}.jar' \
             'java -Xmx2g -Xms2g -jar /tmp/spotbugs-4.0.6/lib/spotbugs.jar  -textui -auxclasspath /tmp/apache-cassandra-${{ env.CASSANDRA_VER }}/lib/ -output /dev/null /tmp/apache-cassandra-${{ env.CASSANDRA_VER }}/lib/apache-cassandra-${{ env.CASSANDRA_VER }}.jar' \
             'java -Xmx2g -Xms2g -jar /tmp/spotbugs-3.1.12/lib/spotbugs.jar -textui -auxclasspath /tmp/apache-cassandra-${{ env.CASSANDRA_VER }}/lib/ -output /dev/null /tmp/apache-cassandra-${{ env.CASSANDRA_VER }}/lib/apache-cassandra-${{ env.CASSANDRA_VER }}.jar' \
