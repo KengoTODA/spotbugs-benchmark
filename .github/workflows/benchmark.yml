@@ -16,7 +16,7 @@ jobs:
       - name: Install hyperfine
         working-directory: /tmp
         run: |
-          wget https://github.com/sharkdp/hyperfine/releases/download/v${{ env.HYPERFINE_VER }}/hyperfine_${{ env.HYPERFINE_VER}}_amd64.deb
+          wget -q https://github.com/sharkdp/hyperfine/releases/download/v${{ env.HYPERFINE_VER }}/hyperfine_${{ env.HYPERFINE_VER}}_amd64.deb
           sudo dpkg -i hyperfine_${{ env.HYPERFINE_VER }}_amd64.deb
         env:
           DEBIAN_FRONTEND: noninteractive
@@ -26,18 +26,18 @@ jobs:
       - name: Download the target Cassandra
         working-directory: /tmp
         run: |
-          wget https://archive.apache.org/dist/cassandra/${{ env.CASSANDRA_VER }}/apache-cassandra-${{ env.CASSANDRA_VER }}-bin.tar.gz -O - | tar -xzf -
+          wget -q https://archive.apache.org/dist/cassandra/${{ env.CASSANDRA_VER }}/apache-cassandra-${{ env.CASSANDRA_VER }}-bin.tar.gz -O - | tar -xzf -
       - name: Download the target SpotBugs & FindBugs
         working-directory: /tmp
         run: |
-          wget https://github.com/spotbugs/spotbugs/releases/download/4.1.4/spotbugs-4.1.4.tgz -O - | tar zxf -
-          wget https://github.com/spotbugs/spotbugs/releases/download/4.0.6/spotbugs-4.0.6.tgz -O - | tar zxf -
-          wget https://repo.maven.apache.org/maven2/com/github/spotbugs/spotbugs/3.1.12/spotbugs-3.1.12.tgz -O - | tar zxf -
-          wget https://nchc.dl.sourceforge.net/project/findbugs/findbugs/3.0.1/findbugs-3.0.1.tar.gz -O - | tar zxf -
+          wget -q https://github.com/spotbugs/spotbugs/releases/download/4.1.4/spotbugs-4.1.4.tgz -O - | tar zxf -
+          wget -q https://github.com/spotbugs/spotbugs/releases/download/4.0.6/spotbugs-4.0.6.tgz -O - | tar zxf -
+          wget -q https://repo.maven.apache.org/maven2/com/github/spotbugs/spotbugs/3.1.12/spotbugs-3.1.12.tgz -O - | tar zxf -
+          wget -q https://nchc.dl.sourceforge.net/project/findbugs/findbugs/3.0.1/findbugs-3.0.1.tar.gz -O - | tar zxf -
       - name: Run microbenchmark
         run: |
           hyperfine --export-markdown - --min-runs 5 --show-output \
             'java -Xmx2g -Xms2g -jar /tmp/spotbugs-4.1.4/lib/spotbugs.jar  -textui -auxclasspath /tmp/apache-cassandra-${{ env.CASSANDRA_VER }}/lib/ -output /dev/null /tmp/apache-cassandra-${{ env.CASSANDRA_VER }}/lib/apache-cassandra-${{ env.CASSANDRA_VER }}.jar' \
             'java -Xmx2g -Xms2g -jar /tmp/spotbugs-4.0.6/lib/spotbugs.jar  -textui -auxclasspath /tmp/apache-cassandra-${{ env.CASSANDRA_VER }}/lib/ -output /dev/null /tmp/apache-cassandra-${{ env.CASSANDRA_VER }}/lib/apache-cassandra-${{ env.CASSANDRA_VER }}.jar' \
             'java -Xmx2g -Xms2g -jar /tmp/spotbugs-3.1.12/lib/spotbugs.jar -textui -auxclasspath /tmp/apache-cassandra-${{ env.CASSANDRA_VER }}/lib/ -output /dev/null /tmp/apache-cassandra-${{ env.CASSANDRA_VER }}/lib/apache-cassandra-${{ env.CASSANDRA_VER }}.jar' \
-            'java -Xmx2g -Xms2g -jar /tmp/findbugs-3.0.1/lib/spotbugs.jar  -textui -auxclasspath /tmp/apache-cassandra-${{ env.CASSANDRA_VER }}/lib/ -output /dev/null /tmp/apache-cassandra-${{ env.CASSANDRA_VER }}/lib/apache-cassandra-${{ env.CASSANDRA_VER }}.jar'
+            'java -Xmx2g -Xms2g -jar /tmp/findbugs-3.0.1/lib/findbugs.jar  -textui -auxclasspath /tmp/apache-cassandra-${{ env.CASSANDRA_VER }}/lib/ -output /dev/null /tmp/apache-cassandra-${{ env.CASSANDRA_VER }}/lib/apache-cassandra-${{ env.CASSANDRA_VER }}.jar'
